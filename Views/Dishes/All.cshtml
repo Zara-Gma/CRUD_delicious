@@ -1,0 +1,16 @@
+@model List<Dish>;
+
+    <div class="container">
+        <h1 class="mb-5 text-center">Welcome</h1>
+        <h5 class="mb-5">Check out some recent dishes!</h5>
+        @foreach (Dish currentDish in Model)
+        {
+        <div style="width: 25rem;">
+            <h5><a asp-controller="Dishes" asp-action="Details" asp-route-id="@currentDish.DishId">@currentDish.Name
+                </a> by: @currentDish.Chef</h5>&nbsp;
+            <a class="btn btn-primary" asp-controller="Dishes" asp-action="Edit" asp-route-id="@currentDish.DishId">Edit
+            </a>&nbsp;
+            <a class="btn btn-danger" href="delete/@currentDish.DishId">Delete</a>
+        </div class="my-2.5">
+        }
+    </div>

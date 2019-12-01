@@ -1,0 +1,6 @@
+appsettings.Development
+appsettings
+.vscode
+bin
+obj
+properties
